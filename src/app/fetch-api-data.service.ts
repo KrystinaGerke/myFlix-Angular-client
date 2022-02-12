@@ -5,17 +5,19 @@ import { Observable, throwError } from 'rxjs';
 
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'https://myflix-kg.herokuapp.com/';
+const apiUrl = 'https://watchitmovieapp.herokuapp.com/';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class UserRegistrationService {
-  // Inject the HttpClient module to the constructor params
- // This will provide HttpClient to the entire class, making it available via this.http
+export class FetchApiDataService {
+  // Inject the HttpClient module to the contructor params
+  // This will provide HttpClient to the entire class, makingit available via this.http
   constructor(private http: HttpClient) {
+
   }
+
 
 
  // Making the api call for the user registration endpoint
