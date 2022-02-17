@@ -10,8 +10,11 @@
     justify-content: center;
     margin-top: 50px;
   }
+  .img-container{
+    justify-content: center;
+  }
   .mat-card {
-    background-color: rgba(8, 8, 8, 0.979);
+    background-color: #D3D3D3;
   }
   .mat-card-header {
     justify-content: center;
@@ -19,10 +22,10 @@
     height: 70px;
   }
   .mat-card-title {
-    color: #fc407f;
+    color: #008080;
   }
   .mat-card-subtitle {
-    color: #fc407f;
+    color: #008080;
   }
 
   .mat-card-actions {
@@ -34,7 +37,7 @@
     padding: 0;
   }
   .mat-icon-button {
-    color: #fc407f;
+    color: #008080;
     position: absolute;
     right: 1.5%;
     top: 1.5%;
