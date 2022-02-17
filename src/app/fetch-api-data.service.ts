@@ -7,6 +7,7 @@ import { Observable, throwError } from 'rxjs';
 //Declaring the api url that will provide data for the client app
 const apiUrl = 'https://myflix-kg.herokuapp.com/';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +21,6 @@ export class FetchApiDataService {
 
  // Making the api call for the user registration endpoint
   public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
     return this.http.post(apiUrl + 'users', userDetails).pipe(
     catchError(this.handleError)
     );
@@ -28,7 +28,6 @@ export class FetchApiDataService {
 
   // Making the api call for log-in
   public userLogin(userDetails: any): Observable<any> {
-    console.log(userDetails);
     return this.http.post(apiUrl + 'login', userDetails).pipe(
       catchError(this.handleError)
     );
@@ -119,8 +118,7 @@ export class FetchApiDataService {
   }
 
   // Making the API call for adding movies to profile
-  addFavoriteMovies(movieId:any): Observable<any> {
-    const username = localStorage.getItem('user')
+  addFavoriteMovie(username: string, movieId:any): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.post(apiUrl + 'users/' + username + '/movies/' + movieId, movieId, {
       headers: new HttpHeaders(
@@ -135,8 +133,7 @@ export class FetchApiDataService {
 
 
 // Making the API call for deleting a movie from user's Watchlist
-  deleteMovie(movieId:any): Observable<any> {
-    const username = localStorage.getItem('user')
+  deleteFavMovie(username: string, movieId:any): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.delete(apiUrl + 'users/' + username + '/movies/' + movieId, {
       headers: new HttpHeaders(
